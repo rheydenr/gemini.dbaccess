@@ -8,115 +8,139 @@
    
     Contributors:
         ktsvetkov - initial implementation
+        jkissner - add support for maven repository and further enhancements
  -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <prerequisites>
-    <maven>3.0</maven>
-  </prerequisites>
+    <prerequisites>
+        <maven>3.0</maven>
+    </prerequisites>
 
-  <groupId>org.eclipse</groupId>
-  <artifactId>gemini.dbaccess.parent</artifactId>
-  <version>1.1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
+    <groupId>org.eclipse</groupId>
+    <artifactId>gemini.dbaccess.parent</artifactId>
+    <version>1.1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-  <name>Gemini DBAccess Parent</name>
+    <name>Gemini DBAccess Parent</name>
 
-  <properties>
-    <tycho-version>0.12.0</tycho-version>
-  </properties>
+    <properties>
+        <tycho-version>0.12.0</tycho-version>
+        <repositorylocation>target/maven_repository</repositorylocation>
+        <skip-deploy>true</skip-deploy>
+    </properties>
 
-  <modules>
-	<module>../gemini.dbaccess.targetdef</module>
-	<module>../osgi.enterprise</module>
-	<module>../org.eclipse.gemini.dbaccess.util</module>
-	<module>../derby/org.apache.derby</module>
-	<module>../derby/org.eclipse.gemini.dbaccess.derby</module>
-	<module>../mysql/com.mysql.jdbc</module>
-	<module>../mysql/org.eclipse.gemini.dbaccess.mysql</module>
-	<module>../h2/org.h2</module>
-	<module>../h2/org.eclipse.gemini.dbaccess.h2</module>
-	<module>../hsqldb/org.hsqldb</module>
-	<module>../hsqldb/org.eclipse.gemini.dbaccess.hsqldb</module>
-	<module>../samples/org.eclipse.gemini.dbaccess.samples</module>
- 	<module>../test/org.eclipse.gemini.dbaccess.test</module>
-	<module>../gemini.dbaccess.feature</module>
-	<module>../gemini.dbaccess.mysql.feature</module>
-	<module>../gemini.dbaccess.h2.feature</module>
-	<module>../gemini.dbaccess.hsqldb.feature</module>
-	<module>../gemini.dbaccess.updatesite</module>
-  </modules>
+    <modules>
+        <module>../gemini.dbaccess.targetdef</module>
+        <module>../osgi.enterprise</module>
+        <module>../org.eclipse.gemini.dbaccess.util</module>
+        <module>../derby/org.apache.derby</module>
+        <module>../derby/org.eclipse.gemini.dbaccess.derby</module>
+        <module>../mysql/com.mysql.jdbc</module>
+        <module>../mysql/org.eclipse.gemini.dbaccess.mysql</module>
+        <module>../h2/org.h2</module>
+        <module>../h2/org.eclipse.gemini.dbaccess.h2</module>
+        <module>../hsqldb/org.hsqldb</module>
+        <module>../hsqldb/org.eclipse.gemini.dbaccess.hsqldb</module>
+        <module>../samples/org.eclipse.gemini.dbaccess.samples</module>
+        <module>../test/org.eclipse.gemini.dbaccess.test</module>
+        <module>../gemini.dbaccess.feature</module>
+        <module>../gemini.dbaccess.mysql.feature</module>
+        <module>../gemini.dbaccess.h2.feature</module>
+        <module>../gemini.dbaccess.hsqldb.feature</module>
+        <module>../gemini.dbaccess.updatesite</module>
+    </modules>
 
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>tycho-maven-plugin</artifactId>
-        <version>${tycho-version}</version>
-        <extensions>true</extensions>
-      </plugin>
-	<plugin>
-		<groupId>org.eclipse.tycho</groupId>
-		<artifactId>target-platform-configuration</artifactId>
-		<version>${tycho-version}</version>
-		<configuration>
-			<resolver>p2</resolver>
-		</configuration>
-	</plugin>
-   </plugins>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.eclipse.tycho</groupId>
-          <artifactId>tycho-compiler-plugin</artifactId>
-          <version>${tycho-version}</version>
-          <configuration>
-            <encoding>UTF-8</encoding>
-          </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>2.4.1</version>
-          <configuration>
-            <encoding>ISO-8859-1</encoding>
-          </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.eclipse.tycho</groupId>
-          <artifactId>target-platform-configuration</artifactId>
-          <version>${tycho-version}</version>
-				<configuration>
-					<resolver>p2</resolver>
-					<target>
-						<artifact>
-							<groupId>org.eclipse</groupId>
-							<artifactId>org.eclipse.gemini.dbaccess.targetdef</artifactId>
-							<version>1.1.0-SNAPSHOT</version>
-							<classifier>gemini.dbaccess</classifier>
-						</artifact>
-					</target>
-					<ignoreTychoRepositories>true</ignoreTychoRepositories>
-				</configuration>
-        </plugin>
-		<plugin>
-			<groupId>org.codehaus.mojo</groupId>
-			<artifactId>findbugs-maven-plugin</artifactId>
-			<version>2.3</version>
-			<configuration>
-				<findbugsXmlOutput>true</findbugsXmlOutput>
-				<findbugsXmlWithMessages>true</findbugsXmlWithMessages>
-				<xmlOutput>true</xmlOutput>
-			</configuration>
-		</plugin>		
-      </plugins>
-    </pluginManagement>
-  	<sourceDirectory>src</sourceDirectory>
-  </build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-maven-plugin</artifactId>
+                <version>${tycho-version}</version>
+                <extensions>true</extensions>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>target-platform-configuration</artifactId>
+                <version>${tycho-version}</version>
+                <configuration>
+                    <resolver>p2</resolver>
+                </configuration>
+            </plugin>
+
+            <!-- The deploy step is not used by Tycho. However, when mvn
+                deploy is called in order to build maven repository, we do not want to include
+                the feature artefact in the maven repository. Therefore the "skip" is used" 
+             -->
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <skip>${skip-deploy}</skip>
+                </configuration>
+            </plugin>
+
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.eclipse.tycho</groupId>
+                    <artifactId>tycho-compiler-plugin</artifactId>
+                    <version>${tycho-version}</version>
+                    <configuration>
+                        <encoding>UTF-8</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.4.1</version>
+                    <configuration>
+                        <encoding>ISO-8859-1</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.eclipse.tycho</groupId>
+                    <artifactId>target-platform-configuration</artifactId>
+                    <version>${tycho-version}</version>
+                    <configuration>
+                        <resolver>p2</resolver>
+                        <target>
+                            <artifact>
+                                <groupId>org.eclipse</groupId>
+                                <artifactId>org.eclipse.gemini.dbaccess.targetdef</artifactId>
+                                <version>1.1.0-SNAPSHOT</version>
+                                <classifier>gemini.dbaccess</classifier>
+                            </artifact>
+                        </target>
+                        <ignoreTychoRepositories>true</ignoreTychoRepositories>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>findbugs-maven-plugin</artifactId>
+                    <version>2.3</version>
+                    <configuration>
+                        <findbugsXmlOutput>true</findbugsXmlOutput>
+                        <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
+                        <xmlOutput>true</xmlOutput>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <sourceDirectory>src</sourceDirectory>
+
+    </build>
+    <distributionManagement>
+        <repository>
+            <id>DBAccess_Maven_repository</id>
+            <url>file:${repositorylocation}</url>
+        </repository>
+    </distributionManagement>
+
 </project>
 
