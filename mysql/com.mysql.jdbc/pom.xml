@@ -17,7 +17,7 @@
 
   <parent>
     <groupId>org.eclipse</groupId>
-    <artifactId>gemini.dbaccess.parent</artifactId>
+    <artifactId>org.eclipse.gemini.dbaccess.parent</artifactId>
     <version>1.1.0-SNAPSHOT</version>
     <relativePath>../../mvn_parent</relativePath>
   </parent>
@@ -25,4 +25,12 @@
   <artifactId>com.mysql.jdbc</artifactId>
     <version>0.0.0-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
+
+  <!-- This properties is not used by Tycho. It is used to include this project
+    into the maven repository when mvn deploy is called. The parent pom contains
+    the default value.
+   -->
+  <properties>
+    <skip-deploy>true</skip-deploy>
+  </properties>
 </project>
