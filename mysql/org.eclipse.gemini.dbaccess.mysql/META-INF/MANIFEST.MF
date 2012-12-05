@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MySQL
 Bundle-SymbolicName: org.eclipse.gemini.dbaccess.mysql
-Bundle-Version: 1.1.0.qualifier
+Bundle-Version: 1.1.0.M4
 Bundle-Activator: org.eclipse.gemini.dbaccess.mysql.Activator
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: com.mysql.jdbc;version="[5.0.0,6.0.0)",
