@@ -1,5 +1,5 @@
 
-Gemini DBAccess 1.1 Release Candidate 1 - January 9, 2013
+Gemini DBAccess 1.1 Release - February 6, 2013
 
 The Gemini DBAccess is about providing modularized access to JDBC resources (OSGi). 
 The bundles below exports a DataSourceFactory object so that client applications of the JDBC driver 

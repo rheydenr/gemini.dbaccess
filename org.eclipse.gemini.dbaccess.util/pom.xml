@@ -17,12 +17,12 @@
     <parent>
         <groupId>org.eclipse.gemini</groupId>
         <artifactId>org.eclipse.gemini.dbaccess.parent</artifactId>
-        <version>1.1.0.RC1</version>
+        <version>1.1.0.RELEASE</version>
         <relativePath>../mvn_parent</relativePath>
     </parent>
 
     <artifactId>org.eclipse.gemini.dbaccess.util</artifactId>
-    <version>1.1.0.RC1</version>
+    <version>1.1.0.RELEASE</version>
     <packaging>eclipse-plugin</packaging>
 
     <!-- This properties is not used by Tycho. It is used to include this
