@@ -3,8 +3,9 @@ Bundle-ManifestVersion: 2
 Bundle-Name: H2 Mock
 Bundle-SymbolicName: org.h2
 Bundle-Version: 1.1.0.RELEASE
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Import-Package: 
  javax.sql
 Export-Package: org.h2,
  org.h2.jdbcx
+Automatic-Module-Name: org.h2

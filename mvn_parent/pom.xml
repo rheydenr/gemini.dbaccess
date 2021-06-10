@@ -21,28 +21,28 @@
 
     <groupId>org.eclipse.gemini</groupId>
     <artifactId>org.eclipse.gemini.dbaccess.parent</artifactId>
-    <version>1.1.0.RELEASE</version>
+    <version>1.2.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Gemini DBAccess Parent</name>
 
     <properties>
-        <tycho-version>0.12.0</tycho-version>
+        <tycho-version>2.3.0</tycho-version>
         <repositorylocation>target/maven_repository</repositorylocation>
         <skip-deploy>false</skip-deploy>
     </properties>
 
     <modules>
         <module>../gemini.dbaccess.targetdef</module>
-        <module>../osgi.enterprise</module>
+        <!-- module>../osgi.enterprise</module -->
         <module>../org.eclipse.gemini.dbaccess.util</module>
-        <module>../derby/org.apache.derby</module>
+<!--         <module>../derby/org.apache.derby</module> -->
         <module>../derby/org.eclipse.gemini.dbaccess.derby</module>
         <module>../mysql/com.mysql.jdbc</module>
         <module>../mysql/org.eclipse.gemini.dbaccess.mysql</module>
-        <module>../h2/org.h2</module>
+<!--         <module>../h2/org.h2</module> -->
         <module>../h2/org.eclipse.gemini.dbaccess.h2</module>
-        <module>../hsqldb/org.hsqldb</module>
+<!--         <module>../hsqldb/org.hsqldb</module> -->
         <module>../hsqldb/org.eclipse.gemini.dbaccess.hsqldb</module>
         <module>../samples/org.eclipse.gemini.dbaccess.samples</module>
         <module>../test/org.eclipse.gemini.dbaccess.test</module>
@@ -51,6 +51,7 @@
         <module>../gemini.dbaccess.h2.feature</module>
         <module>../gemini.dbaccess.hsqldb.feature</module>
         <module>../gemini.dbaccess.updatesite</module>
+        
     </modules>
 
 
@@ -62,13 +63,19 @@
                 <version>${tycho-version}</version>
                 <extensions>true</extensions>
             </plugin>
+            			
+            <plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-versions-plugin</artifactId>
+				<version>${tycho-version}</version>
+			</plugin>
+            
             <plugin>
                 <groupId>org.eclipse.tycho</groupId>
                 <artifactId>target-platform-configuration</artifactId>
-                <version>${tycho-version}</version>
-                <configuration>
+                <!-- configuration>
                     <resolver>p2</resolver>
-                </configuration>
+                </configuration -->
             </plugin>
 
             <!-- The deploy step is not used by Tycho. However, when mvn
@@ -107,16 +114,15 @@
                     <artifactId>target-platform-configuration</artifactId>
                     <version>${tycho-version}</version>
                     <configuration>
-                        <resolver>p2</resolver>
+                        <!-- resolver>p2</resolver  -->
                         <target>
                             <artifact>
                                 <groupId>org.eclipse.gemini</groupId>
-                                <artifactId>org.eclipse.gemini.dbaccess.targetdef</artifactId>
-                                <version>1.1.0.RELEASE</version>
-                                <classifier>gemini.dbaccess</classifier>
+                                <artifactId>gemini.dbaccess.targetdef</artifactId>
+                                <version>1.2.0-SNAPSHOT</version>
+<!--                                 <classifier>gemini.dbaccess.targetdef</classifier> -->
                             </artifact>
                         </target>
-                        <ignoreTychoRepositories>true</ignoreTychoRepositories>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -135,12 +141,6 @@
         <sourceDirectory>src</sourceDirectory>
 
     </build>
-    <distributionManagement>
-        <repository>
-            <id>DBAccess_Maven_repository</id>
-            <url>file:${repositorylocation}</url>
-        </repository>
-    </distributionManagement>
 
 </project>
 

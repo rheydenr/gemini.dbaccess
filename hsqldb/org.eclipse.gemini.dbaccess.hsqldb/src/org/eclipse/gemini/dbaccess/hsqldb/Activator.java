@@ -12,6 +12,8 @@ package org.eclipse.gemini.dbaccess.hsqldb;
 
 import java.util.Hashtable;
 
+import javax.persistence.Persistence;
+
 import org.eclipse.gemini.dbaccess.hsqldb.service.HsqlServiceProperties;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -32,7 +34,6 @@ public class Activator implements BundleActivator {
 				HsqlServiceProperties.HSQLDB_DRIVER_CLASS);
 		service = context.registerService(DataSourceFactory.class.getName(),
 				new HsqlDataSourceFactory(), props);
-
 	}
 
 	public void stop(BundleContext context) throws Exception {

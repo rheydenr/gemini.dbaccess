@@ -48,6 +48,7 @@ public class Activator implements BundleActivator {
         // Register the embedded driver
         props.put(DataSourceFactory.OSGI_JDBC_DRIVER_CLASS, 
                   DerbyServiceProperties.DERBY_EMBEDDED_DRIVER_CLASS);
+        
         embeddedService = context.registerService( 
                 DataSourceFactory.class.getName(),
                 new EmbeddedDataSourceFactory(false), 

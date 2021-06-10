@@ -35,7 +35,7 @@ import org.osgi.service.jdbc.DataSourceFactory;
  * 
  * @author mkeith
  */
-public class DataSourceClientExample implements BundleActivator, ServiceTrackerCustomizer {
+public class DataSourceClientExample implements BundleActivator, ServiceTrackerCustomizer<DataSourceFactory, Object> {
 
     public static final String EMBEDDED_DERBY_DRIVER_NAME = "org.apache.derby.jdbc.EmbeddedDriver";
     public static final String JDBC_4_VERSION = "4.0";
@@ -60,8 +60,8 @@ public class DataSourceClientExample implements BundleActivator, ServiceTrackerC
 
     /* === ServiceTracker methods === */
 
-    public Object addingService(ServiceReference ref) {
-        Object service = ctx.getService(ref);
+    public DataSourceFactory addingService(ServiceReference<DataSourceFactory> ref) {
+        DataSourceFactory service = ctx.getService(ref);
         
         String driver = (String)ref.getProperty(DataSourceFactory.OSGI_JDBC_DRIVER_CLASS);
         String version = (String)ref.getProperty(DataSourceFactory.OSGI_JDBC_DRIVER_VERSION);
@@ -71,15 +71,15 @@ public class DataSourceClientExample implements BundleActivator, ServiceTrackerC
             log("Sample Gemini DBAccess client notified of service: " + driver);
 
             // We have a JDBC service, now do something with it
-            DataSourceFactory dsf = (DataSourceFactory) service;
-            useEmbeddedDataSource(dsf);
+//            DataSourceFactory dsf = (DataSourceFactory) service;
+            useEmbeddedDataSource(service);
         }
         return service;
     }
 
-    public void modifiedService(ServiceReference ref, Object service) { /* Do nothing */ }
+    public void modifiedService(ServiceReference<DataSourceFactory> ref, Object service) { /* Do nothing */ }
 
-    public void removedService(ServiceReference ref, Object service) { ctx.ungetService(ref); }
+    public void removedService(ServiceReference<DataSourceFactory> ref, Object service) { ctx.ungetService(ref); }
 
     /* === Supporting methods === */
 

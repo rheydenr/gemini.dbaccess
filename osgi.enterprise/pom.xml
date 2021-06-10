@@ -23,9 +23,7 @@
     <relativePath>../mvn_parent</relativePath>
   </parent>
 
-  <groupId>org.eclipse.gemini</groupId>
-  <artifactId>osgi.enterprise</artifactId>
-  <version>4.2.0.201003190513</version>
+  <version>4.2.0.qualifier</version>
   <packaging>eclipse-plugin</packaging>
 
   <!-- This properties is not used by Tycho. It is used to include this project 

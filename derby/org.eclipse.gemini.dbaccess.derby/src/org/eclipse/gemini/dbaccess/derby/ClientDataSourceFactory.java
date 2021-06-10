@@ -18,19 +18,12 @@ package org.eclipse.gemini.dbaccess.derby;
 import java.sql.Driver;
 import java.sql.SQLException;
 
-import javax.sql.DataSource;
 import javax.sql.ConnectionPoolDataSource;
+import javax.sql.DataSource;
 import javax.sql.XADataSource;
 
-import org.eclipse.gemini.dbaccess.AbstractDataSourceFactory;
-
-import org.apache.derby.jdbc.ClientConnectionPoolDataSource;
-import org.apache.derby.jdbc.ClientConnectionPoolDataSource40;
 import org.apache.derby.jdbc.ClientDriver;
-import org.apache.derby.jdbc.ClientDataSource;
-import org.apache.derby.jdbc.ClientDataSource40;
-import org.apache.derby.jdbc.ClientXADataSource;
-import org.apache.derby.jdbc.ClientXADataSource40;
+import org.eclipse.gemini.dbaccess.AbstractDataSourceFactory;
 
 /**
  * A factory for creating Derby network data sources. The properties specified
@@ -74,23 +67,23 @@ public class ClientDataSourceFactory extends AbstractDataSourceFactory {
 
     @Override
     public DataSource newDataSource() throws SQLException {
-        return jdbc4
-            ? new ClientDataSource40()
-            : new ClientDataSource();
+                return null; // jdbc4
+//            ? new ClientDataSource40()
+//            : new ClientDataSource();
     }
 
     @Override
     public ConnectionPoolDataSource newConnectionPoolDataSource() 
             throws SQLException {
-        return jdbc4 
-            ? new ClientConnectionPoolDataSource40()
-            : new ClientConnectionPoolDataSource();
+                return null; // jdbc4 
+//            ? new ClientConnectionPoolDataSource40()
+//            : new ClientConnectionPoolDataSource();
     }
 
     @Override
     public XADataSource newXADataSource() throws SQLException {
-        return jdbc4 
-            ? new ClientXADataSource40()
-            : new ClientXADataSource();
+        return null; // jdbc4 
+//            ? new ClientXADataSource40()
+//            : new ClientXADataSource();
     }
 }

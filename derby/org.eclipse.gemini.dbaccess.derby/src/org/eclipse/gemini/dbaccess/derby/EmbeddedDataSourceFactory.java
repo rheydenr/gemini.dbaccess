@@ -23,14 +23,13 @@ import javax.sql.ConnectionPoolDataSource;
 import javax.sql.DataSource;
 import javax.sql.XADataSource;
 
-import org.apache.derby.jdbc.EmbeddedDriver;
-import org.apache.derby.jdbc.EmbeddedDataSource;
-import org.apache.derby.jdbc.EmbeddedDataSource40;
 import org.apache.derby.jdbc.EmbeddedConnectionPoolDataSource;
 import org.apache.derby.jdbc.EmbeddedConnectionPoolDataSource40;
+import org.apache.derby.jdbc.EmbeddedDataSource;
+import org.apache.derby.jdbc.EmbeddedDataSource40;
+import org.apache.derby.jdbc.EmbeddedDriver;
 import org.apache.derby.jdbc.EmbeddedXADataSource;
 import org.apache.derby.jdbc.EmbeddedXADataSource40;
-
 import org.eclipse.gemini.dbaccess.AbstractDataSourceFactory;
 
 /**

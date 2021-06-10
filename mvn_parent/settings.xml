@@ -6,7 +6,7 @@
 	<pluginGroups>
 	</pluginGroups>
 
-  <proxies>
+  <!-- proxies>
     <proxy>
       <active/>
       <protocol>http</protocol>
@@ -17,6 +17,6 @@
       <nonProxyHosts>TODO-no-proxy-host</nonProxyHosts>
       <id/>
     </proxy>
-  </proxies>
+  </proxies -->
 
 </settings>
