@@ -3,8 +3,7 @@
       id="org.eclipse.gemini.dbaccess.feature"
       label="%featureName"
       version="1.2.0.qualifier"
-      provider-name="%providerName"
-      plugin="org.eclipse.gemini.dbaccess.derby">
+      provider-name="%providerName">
 
    <description>
       %description
@@ -24,20 +23,6 @@
 
    <plugin
          id="osgi.enterprise"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.derby"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.gemini.dbaccess.derby"
          download-size="0"
          install-size="0"
          version="0.0.0"
