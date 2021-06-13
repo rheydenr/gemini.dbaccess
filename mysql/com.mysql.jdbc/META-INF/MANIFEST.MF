@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MySQL Mock
 Bundle-SymbolicName: com.mysql.jdbc
-Bundle-Version: 1.2.0.qualifier
+Bundle-Version: 1.2.0
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: com.mysql.jdbc;version="5.0.0",
  com.mysql.jdbc.jdbc2.optional;version="5.0.0"

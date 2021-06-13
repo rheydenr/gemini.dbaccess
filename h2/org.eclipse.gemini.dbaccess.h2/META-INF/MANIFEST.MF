@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Gemini DBAccess H2
 Bundle-SymbolicName: org.eclipse.gemini.dbaccess.h2
-Bundle-Version: 1.2.0.qualifier
+Bundle-Version: 1.2.0
 Bundle-Activator: org.eclipse.gemini.dbaccess.h2.Activator
 Bundle-Vendor: Eclipse Gemini
 Import-Package: javax.sql,

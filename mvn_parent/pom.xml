@@ -21,7 +21,7 @@
 
     <groupId>org.eclipse.gemini</groupId>
     <artifactId>org.eclipse.gemini.dbaccess.parent</artifactId>
-    <version>1.2.0-SNAPSHOT</version>
+    <version>1.2.0</version>
     <packaging>pom</packaging>
 
     <name>Gemini DBAccess Parent</name>
@@ -120,7 +120,7 @@
                             <artifact>
                                 <groupId>org.eclipse.gemini</groupId>
                                 <artifactId>gemini.dbaccess.targetdef</artifactId>
-                                <version>1.2.0-SNAPSHOT</version>
+                                <version>1.2.0</version>
 <!--                                 <classifier>gemini.dbaccess.targetdef</classifier> -->
                             </artifact>
                         </target>
