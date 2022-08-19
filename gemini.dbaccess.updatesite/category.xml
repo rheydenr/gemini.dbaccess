@@ -12,9 +12,12 @@
    <feature id="org.eclipse.gemini.dbaccess.feature">
       <category name="org.eclipse.gemini.dbaccess"/>
    </feature>
+   <feature id="org.eclipse.gemini.dbaccess.derby.feature">
+      <category name="org.eclipse.gemini.dbaccess"/>
+   </feature>
    <category-def name="org.eclipse.gemini.dbaccess" label="Gemini DBAccess"/>
-   <repository-reference location="http://download.eclipse.org/gemini/jpa/updates" enabled="true" />
    <repository-reference location="http://download.eclipse.org/releases/2021-03" enabled="true" />
    <repository-reference location="http://download.eclipse.org/rt/eclipselink/updates/" enabled="true" />
    <repository-reference location="http://https://download.eclipse.org/tools/orbit/downloads/drops/R20210223232630/repository" enabled="true" />
+   <repository-reference location="http://p2.fakturama.info/gemini.jpa/1.2.0" enabled="true" />
 </site>
